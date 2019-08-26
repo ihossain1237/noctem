@@ -1,0 +1,110 @@
+{
+  "appData": {
+    "men": {
+      "shirts": [
+        {
+          "name": "Slim fit cotton shirt",
+          "price": 99.99,
+          "image": "https://st.mngbcn.com/rcs/pics/static/T5/fotos/S20/53045715_92_D1.jpg?ts=1563892455886&imwidth=625&imdensity=1"
+        },
+        {
+          "name": "Chest-pocket cotton shirt",
+          "price": 59.99,
+          "image": "https://st.mngbcn.com/rcs/pics/static/T5/fotos/S20/53060758_94.jpg?ts=1562837625474&imwidth=625&imdensity=1"
+        },
+        {
+          "name": "Regular Fit Oxford Shirt",
+          "price": 29.99,
+          "image": "https://lp2.hm.com/hmgoepprod?set=source[/91/0e/910e2886b23e7b25acf28a8c00a8ba68066cfc50.jpg],origin[dam],category[men_shirts_longsleeved],type[DESCRIPTIVESTILLLIFE],res[y],hmver[1]&call=url[file:/product/main]"
+        },
+        {
+          "name": "Slim Fit Easy-iron Shirt",
+          "price": 19.99,
+          "image": "https://lp2.hm.com/hmgoepprod?set=source[/a8/f3/a8f3683f95a68f34b86c06f10885ef49a612aea3.jpg],origin[dam],category[men_shirts_dressed],type[DESCRIPTIVESTILLLIFE],res[y],hmver[1]&call=url[file:/product/main]"
+        },
+        {
+          "name": "Striped Shirt",
+          "price": 45.90,
+          "image": "https://static.zara.net/photos///2019/I/0/2/p/4479/238/710/2/cb-0-0-4176-3072-Center/w/1920/4479238710_2_4_1.jpg?ts=1565346134509"
+        },
+        {
+          "name": "Premium Mercerized Shirt",
+          "price": 49.90,
+          "image": "https://static.zara.net/photos///2019/I/0/2/p/5372/314/401/2/cb-0-0-4176-3072-Center/w/1920/5372314401_2_1_1.jpg?ts=1565625863076"
+        },
+        {
+          "name": "Sunset One Pocket Shirt",
+          "price": 33.98,
+          "image": "https://lsco.scene7.com/is/image/lsco/Levis/clothing/658240424-front-pdp.jpg?$grid_desktop_full$"
+        },
+        {
+          "name": "Jackson Worker Shirt",
+          "price": 89.95,
+          "image": "https://lsco.scene7.com/is/image/lsco/levis/clothing/195730093-front-pdp.jpg?$grid_desktop_full$"
+        },
+        {
+          "name": "Regular fit pocket cotton shirt",
+          "price": 69.99,
+          "image": "https://st.mngbcn.com/rcs/pics/static/T5/fotos/S20/53043697_08.jpg?ts=1562841526321&imwidth=625&imdensity=1"
+        },
+        {
+          "name": "Slim fit stretch cotton shirt",
+          "price": 69.99,
+          "image": "https://st.mngbcn.com/rcs/pics/static/T5/fotos/outfit/S20/53070510_78-99999999_01.jpg?ts=1560876681783&imwidth=625&imdensity=1"
+        }
+      ],
+      "tShirts": [
+        {
+          "name": "Stripe Print Headphones T-Shirt",
+          "price": 7.49,
+          "image": "https://www.hautelookcdn.com/products/19045/large/10732972.jpg"
+        },
+        {
+          "name": "\nBOATHOUSE\nMENS VICTOR CREWNECK T-SHIRT- BLACK",
+          "price": 12.97,
+          "image": "https://cdn.shopify.com/s/files/1/2959/1636/products/BHA-VIC-CRW-BLK-BLK-1_0549135b-00c5-4e95-b965-cbebfd0421a3_1000x.jpg?v=1565382330"
+        },
+        {
+          "name": "\nNIKE\nMENS SB LOGO SHORT SLEEVE T-SHIRT - WHITE/BLACK",
+          "price": 35.00,
+          "image": "https://cdn.shopify.com/s/files/1/2959/1636/products/nik-821946-100-w-b-1_1000x.jpg?v=1554750710"
+        },
+        {
+          "name": "Mountain Bear",
+          "price": 25.00,
+          "image": "https://cdn.designbyhumans.com/product_images/p/162804.65.9808bS7ayNDQBAA-650x650-b-p-eee.jpg"
+        },
+        {
+          "name": "Never Forget",
+          "price": 25.00,
+          "image": "https://cdn.designbyhumans.com/product_images/p/827876.65.b069cS7YyNAAA-650x650-b-p-eee.jpg"
+        },
+        {
+          "name": "Woods Men's Hector Crew Baseball Shirt - Peacoat",
+          "price": 30.00,
+          "image": "https://fgl.scene7.com/is/image/FGLSportsLtd/FGL_332660714_41_a?bgColor=0,0,0,0&fmt=png-alpha&hei=520&resMode=sharp2&op_sharpen=1"
+        },
+        {
+          "name": "Crew Neck Long Tee",
+          "price": 7.49,
+          "image": "https://www.hautelookcdn.com/products/PS410824YM/large/10232043.jpg"
+        },
+        {
+          "name": "Under Armour Men's Project Rock Terry Short Sleeve Hoodie",
+          "price": 69.99,
+          "image": "\"//fgl.scene7.com/is/image/FGLSportsLtd/FGL_332867904_40_a-Under-Armour-Mens-Project-Rock-Terry-Short-Sleeve-Hoodie-1345818-408?bgColor=0,0,0,0&fmt=png-alpha&hei=520&resMode=sharp2&op_sharpen=1\""
+        },
+        {
+          "name": "Under Armour Men's MK1 Terry Short Sleeve Hoodie",
+          "price": 38.49,
+          "image": "\"//fgl.scene7.com/is/image/FGLSportsLtd/FGL_332650521_01_a-Under-Armour-Mens-MK1-Terry-Short-Sleeve-Hoodie-1327402-001?bgColor=0,0,0,0&fmt=png-alpha&hei=520&resMode=sharp2&op_sharpen=1\""
+        },
+        {
+          "name": "Diadora Men's Sportswear T Shirt - Black",
+          "price": 29.99,
+          "image": "\"//fgl.scene7.com/is/image/FGLSportsLtd/FGL_332836072_01_a_7001F304?bgColor=0,0,0,0&fmt=png-alpha&hei=520&resMode=sharp2&op_sharpen=1\""
+        }
+      ]
+    }
+  }
+}
