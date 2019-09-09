@@ -1,23 +1,40 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Route, Switch} from 'react-router-dom';
 import './App.css';
 import Homepage from "./pages/homepage/homepage";
-import Navbar from "./components/navbar/navbar";
-
+import Navbar from "./components/navbar/navbar.component";
+import SignInForm from './components/signInForm/signInForm.component';
 import Products from "./pages/Products/Products";
-import Account from "./components/log-in/account";
+import SignUpForm from './components/signUpFrom/signUpForm.component'
+import Cart from "./components/cart/cart.component";
 
-function App() {
-    return (
-        <div>
-            <Navbar/>
-            <Switch>
-                <Route path={'/'} exact component={Homepage}/>
-                <Route path={'/products/:type/:item'} component={Products}/>
-                <Route path={`/login`} component={Account}/>
-            </Switch>
-        </div>
-    );
+import {connect} from "react-redux";
+
+
+class App extends Component {
+
+    render() {
+        console.log(localStorage)
+        return (
+            <div>
+                <div>
+                    <Navbar/>
+                    <Switch>
+                        <Route path={'/'} exact component={Homepage}/>
+                        <Route path={'/products/:category/:type'} component={Products}/>
+                        <Route path={`/signin`} component={SignInForm}/>
+                        <Route path={`/signup`} component={SignUpForm}/>
+                        <Route path={`/cart`} component={Cart}/>
+                    </Switch>
+                </div>
+            </div>
+        );
+    }
 }
-
-export default App;
+const mapStateToProps = state=>{
+  return{
+      cart:state.cart,
+      signIn:state.signIn
+  }
+};
+export default connect(mapStateToProps)(App);

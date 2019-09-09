@@ -1,0 +1,28 @@
+.navbar {
+  display: flex;
+  width: 100%;
+  padding: 1rem;
+  //position: fixed;
+  //z-index: 1000;
+  justify-content: space-between;
+  background-color: rgba(white, 0.5);
+
+  &-left, &-right {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &-left {
+    width: 40%;
+  }
+
+  &-right {
+    width: 20%;
+  }
+
+  &__item {
+    text-decoration: none;
+    color: black;
+
+  }
+}

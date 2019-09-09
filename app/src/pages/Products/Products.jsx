@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {fetchProducts} from "../../redux/Shop/shop-actions";
-import ProductGrid from "../../components/product-grid/product-grid";
-import Sidebar from "../../components/sidebar/sidebar";
+import {fetchProducts} from "../../redux/Shop/shop.actions";
+import ProductGrid from "../../components/productGrid/productGrid.component";
+import Sidebar from "../../components/sidebar/sidebar.component";
 import './Products.scss'
 import {connect} from "react-redux";
 
@@ -10,22 +10,22 @@ class Products extends Component {
 
     componentDidMount() {
 
-        const {type, item} = this.props.match.params;
-        this.props.fetchProducts(type, item);
+        const {category, type} = this.props.match.params;
+        this.props.fetchProducts(category, type);
     }
-
     componentDidUpdate(prevProps, prevState, snapshot) {
-        const {type, item} = this.props.match.params;
-        const {type: prevType, item: prevItem} = prevProps.match.params;
-
-        if (type !== prevType || item !== prevItem) {
-            this.props.fetchProducts(type, item);
+        const {category, type} = this.props.match.params;
+        const {category: prevCategory, type: prevType} = prevProps.match.params;
+        if (category !== prevCategory || type !== prevType) {
+            this.props.fetchProducts(category, type);
+            window.scrollTo(0,0);
         }
     }
 
 
     render() {
-        console.log(this.props.products);
+
+
         return (
             <div className={`products`}>
                 <ProductGrid products={this.props.products}/>

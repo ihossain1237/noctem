@@ -1,13 +1,24 @@
 import React from "react";
 import './account.scss';
-import SignUpForm from "../sign-up-form/sign-up-form";
+import {connect} from "react-redux";
+
+import SignInForm from "../signInForm/signInForm.component";
+
+class Account extends React.Component {
+    onSignUpSubmit = (formValues)=>{
 
 
-const Account = () => {
+    };
 
-    return <div className={`account`}>
-        <SignUpForm/>
-    </div>
+    onSignInSubmit = (fv)=>{
+
+    };
+
+    render() {
+        return (<div className={`account`}>
+            <SignInForm/>
+        </div>)
+    }
 };
 
-export default Account;
+export default connect(null)(Account);
