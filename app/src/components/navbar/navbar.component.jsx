@@ -7,17 +7,17 @@ import appData from "../../api/appData";
 const Navbar = ({signOut,isSignedIn,cart}) => {
 
     const signInOrOut = isSignedIn? <span onClick={async ()=>{
-        const {email,items} = cart;
-        const body = JSON.stringify({email,items});
-        const config = {
-            headers:{
-                "Content-Type":"application/json"
-            }
-        };
-        const res = await appData.post('/cart/update',body,config);
-
+        if (isSignedIn){
+            const {email,items} = cart;
+            const body = JSON.stringify({email,items});
+            const config = {
+                headers:{
+                    "Content-Type":"application/json"
+                }
+            };
+            const res = await appData.post('/cart/update',body,config);
+        }
         signOut();
-
     }}>SIGN OUT</span>:<Link className={`navbar__item`} to={'/signin'}>SIGN IN</Link>;
     return (
         <div className="navbar">

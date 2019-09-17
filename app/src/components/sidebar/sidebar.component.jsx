@@ -6,10 +6,6 @@ import SidebarSection from "./sidebarSection/sidebarSection.component";
 const Sidebar = () => {
     return <div className={`sidebar`}>
         <SidebarSection/>
-        <SidebarSection/>
-        <SidebarSection/>
-        <SidebarSection/>
-        <SidebarSection/>
     </div>
 };
 

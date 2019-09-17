@@ -1,9 +1,10 @@
-.container {
+.homepage-container {
+  position: fixed;
+  top: 6%;
   width: 100vw;
   height: 100vh;
   display: flex;
   box-sizing: border-box;
-
   h1 {
     margin: 0;
     padding: 0;
@@ -18,7 +19,7 @@
     }
   }
 
-  .item {
+  .homepage-item {
     width: 20vw;
     color: #fff;
     text-align: center;

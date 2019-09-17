@@ -8,13 +8,10 @@ import Products from "./pages/Products/Products";
 import SignUpForm from './components/signUpFrom/signUpForm.component'
 import Cart from "./components/cart/cart.component";
 
-import {connect} from "react-redux";
 
 
 class App extends Component {
-
     render() {
-        console.log(localStorage)
         return (
             <div>
                 <div>
@@ -31,10 +28,4 @@ class App extends Component {
         );
     }
 }
-const mapStateToProps = state=>{
-  return{
-      cart:state.cart,
-      signIn:state.signIn
-  }
-};
-export default connect(mapStateToProps)(App);
+export default App;

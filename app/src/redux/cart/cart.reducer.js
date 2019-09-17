@@ -1,4 +1,4 @@
-import {ADD_TO_CART, LOAD_CART, REMOVE_FROM_CART, UNLOAD_CART} from "../action.types";
+import {ADD_TO_CART, CLEAR_CART, DELETE_FROM_CART, LOAD_CART, REMOVE_FROM_CART, UNLOAD_CART} from "../action.types";
 import {cartOperation} from "./cart.utils";
 
 
@@ -14,12 +14,17 @@ const cartReducer = (state=initialState,action)=>{
     case ADD_TO_CART:
       return{
         ...state,
-        items: cartOperation(ADD_TO_CART,state.items,payload)
+        items: cartOperation(ADD_TO_CART,state.items,payload,state.email)
       };
     case REMOVE_FROM_CART:
       return{
         ...state,
-        items: cartOperation(REMOVE_FROM_CART,state.items,payload)
+        items: cartOperation(REMOVE_FROM_CART,state.items,payload,state.email)
+      };
+    case DELETE_FROM_CART:
+      return {
+        ...state,
+        items: cartOperation(DELETE_FROM_CART,state.items,payload,state.email)
       };
     case LOAD_CART:
       return {
@@ -32,6 +37,11 @@ const cartReducer = (state=initialState,action)=>{
         ...state,
         email: null,
         items: []
+      };
+    case CLEAR_CART:
+      return {
+        ...state,
+        items:cartOperation(CLEAR_CART,null,null,state.email)
       };
     default:
       return state;

@@ -1,27 +1,28 @@
 import React from 'react';
 import './cartItem.style.scss';
 import Img from 'react-image';
-import {addToCart,removeFromCart} from "../../../redux/cart/cart.actions";
+import {addToCart,removeFromCart,deleteFromCart} from "../../../redux/cart/cart.actions";
 import {connect} from "react-redux";
+import CustomButton from "../../custom-button/customButton.component";
 
-const CartItem = ({product,addToCart,removeFromCart}) => {
+const CartItem = ({product,addToCart,removeFromCart,deleteFromCart}) => {
     const {name,price,image,itemCount} = product;
     return (
         <div className={`cart-item`}>
-            <Img src={image} className={`cart-item-img`}/>
+            <Img src={image} className={`img-fluid cart-item-img`}/>
             <div className={`cart-item-info`}>
                 <span className={`cart-item-info-name`}>{name}</span>
-                <span className={`cart-item-info-price`}>${price}</span>
+                <span className={`cart-item-info-price`}>${(price*itemCount).toFixed(2)}</span>
                 <div className={`cart-item-info-quantity`}>
-                    <span onClick={()=>removeFromCart(product)}>&larr;</span>
-                    <span> {itemCount}</span>
-                    <span onClick={()=>addToCart(product)} >&rarr;</span>
+                    <CustomButton onClick={()=>removeFromCart(product)} > &#10094;</CustomButton>
+                    <span className={`cart-item-info-itemCount`}> {itemCount}</span>
+                    <CustomButton onClick={()=>addToCart(product)} >&#10095;</CustomButton>
                 </div>
-                <span>remove </span>
+                <CustomButton onClick={()=>deleteFromCart(product)} customStyle={`cart-item-remove`} >Delete</CustomButton>
             </div>
 
         </div>
     );
 };
 
-export default connect(null,{addToCart,removeFromCart})(CartItem);
+export default connect(null,{addToCart,removeFromCart,deleteFromCart})(CartItem);
