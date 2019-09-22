@@ -1,66 +1,218 @@
-.container {
+.homepage-container {
+  position: absolute;
+  top: 8%;
   width: 100vw;
-  height: 100vh;
+  height: 95vh;
   display: flex;
+  flex-wrap: wrap;
   box-sizing: border-box;
 
-  h1 {
-    margin: 0;
-    padding: 0;
-    line-height: 100vh;
-    transition: 0.5s;
-    background: rgba(0, 0, 0, 0.8);
+  //h1 {
+  //  margin: 0;
+  //  padding: 0;
+  //  line-height: 100vh;
+  //  transition: 0.5s;
+  //  background: rgba(0, 0, 0, 0.8);
+  //
+  //  span {
+  //    width: 100%;
+  //    transition: 1s;
+  //    padding: 20px 25px;
+  //  }
+  //}
 
-    span {
-      width: 100%;
-      transition: 1s;
-      padding: 20px 25px;
-    }
-  }
+  .homepage-item {
 
-  .item {
-    width: 20vw;
+    width: 50vw;
     color: #fff;
     text-align: center;
-    line-height: 100vh;
+    //line-height: 100vh;
     flex-grow: 1;
     background-size: cover !important;
     background-position: center;
     transition: 1s;
     background-repeat: no-repeat;
     cursor: pointer;
-
-    &:hover {
-      h1 {
-        span {
-          color: #333;
-          background: rgba(255, 255, 255, 0.8);
-        }
-
-        background: rgba(0, 0, 0, 0);
-      }
-
-      width: 30vw;
+    position: relative;
+    //margin: 1rem;
+    &-text{
+      border: 1px solid white;
+      background: rgba(black,0.4);
+      font-family: 'Abel', sans-serif;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 100%;
+      padding: 1rem;
     }
 
     &:nth-child(1) {
-      background: url(https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?cs=srgb&dl=blur-boy-depth-of-field-1183266.jpg&fm=jpg);
+      background: url(../../assets/men.jpg);
     }
 
     &:nth-child(2) {
-      background: url(https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?cs=srgb&dl=beautiful-woman-fashion-fashion-model-1926769.jpg&fm=jpg);
+      background: url(../../assets/women.jpg);
     }
 
     &:nth-child(3) {
-      background: url(https://images.pexels.com/photos/1650281/pexels-photo-1650281.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+      background: url(../../assets/boy.jpg);
     }
 
     &:nth-child(4) {
-      background: url(https://images.pexels.com/photos/2352268/pexels-photo-2352268.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+      background: url(../../assets/girl.jpg);
     }
 
-    &:nth-child(5) {
-      background: url(https://images.pexels.com/photos/698163/pexels-photo-698163.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+
+  }
+}
+
+@media screen and (min-width: 1020px){
+  .homepage-container {
+    position: fixed;
+    top: 7.5%;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    box-sizing: border-box;
+
+
+    .homepage-item {
+      width: 20vw;
+      color: #fff;
+      text-align: center;
+      line-height: 100vh;
+      flex-grow: 1;
+      background-size: cover !important;
+      background-position: center;
+      transition: 1s;
+      background-repeat: no-repeat;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      -webkit-transform:translate3d(0,0,0);
+      cursor: pointer;
+      h1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(0,0);
+        border: none;
+        margin: 0;
+        padding: 0;
+        line-height: 100vh;
+        transition: 1s;
+        -moz-transition: 1s;
+        background: rgba(0, 0, 0, 0.8);
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        -webkit-transform:translate3d(0,0,0);
+        span {
+          width: 100%;
+          transition: 1s;
+          padding: 20px 25px;
+        }
+      }
+
+      &:hover {
+        h1 {
+          span {
+            color: #333;
+            background: rgba(255, 255, 255, 0.8);
+          }
+
+          background: rgba(0, 0, 0, 0);
+        }
+
+        width: 25vw;
+      }
+
+      //&:nth-child(1) {
+      //  background: url(https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?cs=srgb&dl=blur-boy-depth-of-field-1183266.jpg&fm=jpg);
+      //}
+      //
+      //&:nth-child(2) {
+      //  background: url(https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?cs=srgb&dl=beautiful-woman-fashion-fashion-model-1926769.jpg&fm=jpg);
+      //}
+      //
+      //&:nth-child(3) {
+      //  background: url(https://images.pexels.com/photos/1650281/pexels-photo-1650281.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+      //}
+      //
+      //&:nth-child(4) {
+      //  background: url(https://images.pexels.com/photos/2352268/pexels-photo-2352268.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+      //}
+      //
+      //&:nth-child(5) {
+      //  background: url(https://images.pexels.com/photos/698163/pexels-photo-698163.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+      //}
     }
   }
 }
+
+//.homepage-container {
+//  position: fixed;
+//  top: 7.5%;
+//  width: 100vw;
+//  height: 100vh;
+//  display: flex;
+//  box-sizing: border-box;
+//  h1 {
+//    margin: 0;
+//    padding: 0;
+//    line-height: 100vh;
+//    transition: 0.5s;
+//    background: rgba(0, 0, 0, 0.8);
+//
+//    span {
+//      width: 100%;
+//      transition: 1s;
+//      padding: 20px 25px;
+//    }
+//  }
+//
+//  .homepage-item {
+//    width: 20vw;
+//    color: #fff;
+//    text-align: center;
+//    line-height: 100vh;
+//    flex-grow: 1;
+//    background-size: cover !important;
+//    background-position: center;
+//    transition: 1s;
+//    background-repeat: no-repeat;
+//    cursor: pointer;
+//
+//    &:hover {
+//      h1 {
+//        span {
+//          color: #333;
+//          background: rgba(255, 255, 255, 0.8);
+//        }
+//
+//        background: rgba(0, 0, 0, 0);
+//      }
+//
+//      width: 30vw;
+//    }
+//
+//    &:nth-child(1) {
+//      background: url(https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?cs=srgb&dl=blur-boy-depth-of-field-1183266.jpg&fm=jpg);
+//    }
+//
+//    &:nth-child(2) {
+//      background: url(https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?cs=srgb&dl=beautiful-woman-fashion-fashion-model-1926769.jpg&fm=jpg);
+//    }
+//
+//    &:nth-child(3) {
+//      background: url(https://images.pexels.com/photos/1650281/pexels-photo-1650281.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+//    }
+//
+//    &:nth-child(4) {
+//      background: url(https://images.pexels.com/photos/2352268/pexels-photo-2352268.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+//    }
+//
+//    &:nth-child(5) {
+//      background: url(https://images.pexels.com/photos/698163/pexels-photo-698163.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+//    }
+//  }
+//}

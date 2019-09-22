@@ -28,8 +28,8 @@ class Products extends Component {
 
         return (
             <div className={`products`}>
-                <ProductGrid products={this.props.products}/>
                 <Sidebar/>
+                <ProductGrid products={this.props.products}/>
 
             </div>
         );

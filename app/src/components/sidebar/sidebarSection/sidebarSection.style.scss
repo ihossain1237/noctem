@@ -1,20 +1,26 @@
-.sidebar-section {
+.sidebarSection {
   width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2rem;
+  margin: 0 auto;
   text-align: center;
-
-  &-heading {
-    margin: 2rem;
-
-  }
-
+  color: black;
   &-item {
     margin: 1rem;
     cursor: pointer;
     font-size: 1.2rem;
+    text-decoration: none;
+    color: black;
   }
 }
+
+@media screen and (min-width: 1020px){
+  .sidebarSection{
+    &-item{
+      font-size: 1.5rem;
+    }
+  }
+}
+

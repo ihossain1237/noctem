@@ -1,7 +1,5 @@
-import {ADD_TO_CART, LOAD_CART, REMOVE_FROM_CART, UNLOAD_CART} from "../action.types";
+import {ADD_TO_CART, CLEAR_CART, DELETE_FROM_CART, LOAD_CART, REMOVE_FROM_CART, UNLOAD_CART} from "../action.types";
 import appData from "../../api/appData";
-
-
 
 export const addToCart = (item) => dispatch =>{
   dispatch({
@@ -17,9 +15,23 @@ export const removeFromCart = (item) => dispatch=>{
   })
 };
 
+export const deleteFromCart = (item)=>dispatch=>{
+  dispatch({
+      type:DELETE_FROM_CART,
+      payload:item
+  })
+};
+
 export const unLoadCart = ()=>dispatch=>{
   dispatch({
       type:UNLOAD_CART
+  })
+};
+
+export const clearCart= () => dispatch =>{
+    console.log('clear cart')
+  dispatch({
+      type:CLEAR_CART
   })
 };
 

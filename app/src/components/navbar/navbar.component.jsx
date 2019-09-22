@@ -4,41 +4,65 @@ import {Link} from "react-router-dom";
 import {connect} from "react-redux";
 import {signOut} from "../../redux/signIn/signIn.actions";
 import appData from "../../api/appData";
-const Navbar = ({signOut,isSignedIn,cart}) => {
+import CustomButton from "../custom-button/customButton.component";
 
-    const signInOrOut = isSignedIn? <span onClick={async ()=>{
-        const {email,items} = cart;
-        const body = JSON.stringify({email,items});
-        const config = {
-            headers:{
-                "Content-Type":"application/json"
-            }
-        };
-        const res = await appData.post('/cart/update',body,config);
 
-        signOut();
+class Navbar extends React.Component {
 
-    }}>SIGN OUT</span>:<Link className={`navbar__item`} to={'/signin'}>SIGN IN</Link>;
-    return (
-        <div className="navbar">
-            <div className={`navbar-left`}>
-                <Link className={`navbar__item`} to={'/'}>NOCTEM</Link>
-                <Link className={`navbar__item`} to={'/products/men/:item'}>MEN</Link>
-                <Link className={`navbar__item`} to={'/women'}>WOMEN</Link>
-                <Link className={`navbar__item`} to={'/'}>GIRLS</Link>
-                <Link className={`navbar__item`} to={'/'}>BOYS</Link>
+    state={
+        visible:false,
+
+    };
+    handleClick=()=>{
+
+        if (!this.state.visible){
+            document.addEventListener('click', this.handleOutsideNavbar, false);
+        }else {
+            document.removeEventListener('click', this.handleOutsideNavbar, false);
+        }
+        this.setState(prevState => ({
+            visible: !prevState.visible,
+        }));
+    };
+    handleOutsideNavbar=(e)=> {
+        if (this.node.contains(e.target)) {
+            return;
+        }
+
+        this.handleClick();
+    };
+
+    render() {
+
+        const signInOrOut = this.props.isSignedIn ?<span onClick={()=>this.props.signOut()}>SIGN OUT</span> :<Link className={`nav-menu-item`} to={'/signIn'}>SIGN IN</Link>;
+
+
+        return (
+            <div className={`nav`} ref={node => { this.node = node; }}>
+                <Link className={`nav-brand`} to={`/`}>NOCTEM</Link>
+                <div className={`nav-menu-desktop`}>
+                    <Link className={`nav-expand-item`} to={'/products/men/:item'}>MEN</Link>
+                    <Link className={`nav-expand-item`} to={'/products/women/:item'}>WOMEN</Link>
+                    <Link className={`nav-expand-item`} to={'/products/girls/:item'}>GIRLS</Link>
+                    <Link className={`nav-expand-item`} to={'/products/boys/:item'}>BOYS</Link>
+                </div>
+                <div className={`nav-menu`}>
+                    <Link className={`nav-menu-item`} to={'/products/men/:item'}>SEARCH</Link>
+                    {signInOrOut}
+                    <Link className={`nav-menu-item`} to={'/cart'}>CART</Link>
+                    <CustomButton customStyle={'nav-toggle'} onClick={this.handleClick}>{this.state.visible? <span className={'nav-toggle-arrow'}> &#10094;</span>:<span className={'nav-toggle-arrow'}>&#10095;</span>}</CustomButton>
+                </div>
+
+                <div className={`nav-expand`} style={{display:this.state.visible?'flex':'none'}}>
+                    <Link className={`nav-expand-item`} to={'/products/men/:item'}>MEN</Link>
+                    <Link className={`nav-expand-item`} to={'/products/women/:item'}>WOMEN</Link>
+                    <Link className={`nav-expand-item`} to={'/products/girls/:item'}>GIRLS</Link>
+                    <Link className={`nav-expand-item`} to={'/products/boys/:item'}>BOYS</Link>
+                </div>
             </div>
-
-            <div className={`navbar-right`}>
-
-                <Link className={`navbar__item`} to={'/search'}>SEARCH</Link>
-                {signInOrOut}
-                <Link className={`navbar__item`} to={'/cart'}>CART</Link>
-            </div>
-
-        </div>
-    );
-};
+        );
+    }
+}
 
 const mapStateToProps = state=>{
   return{

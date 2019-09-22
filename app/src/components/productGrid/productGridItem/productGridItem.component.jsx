@@ -4,23 +4,23 @@ import './productGridItem.style.scss';
 import 'hover.css'
 import CustomButton from "../../custom-button/customButton.component";
 import Img from 'react-image';
-import {addToCart, removeFromCart} from "../../../redux/cart/cart.actions";
+import {addToCart} from "../../../redux/cart/cart.actions";
 import {connect} from "react-redux";
 
-const ProductGridItem = ({product,addToCart,cart}) => {
+const ProductGridItem = ({product,addToCart}) => {
+    const {name,image,price}  = product;
+    return <div className={`container-fluid productGridItem `} >
+        <div className={`productGridItem-img`}>
+            <Img className={`img-fluid`}  src={`${image}`} alt=""/>
+        </div>
+            <div className={`productGridItem-info`}>
+                <span className={`productGridItem-info-name`}>{name}</span>
+                <span  className={`productGridItem-info-price`}>${`${price}`}</span>
+                <CustomButton onClick={()=>addToCart(product)} customStyle={`productGridItem-info-btn`} btnText={'Add to cart'}>Add To Cart</CustomButton>
+            </div>
 
-    const {name,image,price,_id:itemId}  = product;
-
-    return <div className={`product-grid-item`} >
-            <Img className={`product-grid-item-image `} src={`${image}`} alt=""/>
-        <CustomButton onClick={()=>addToCart(product)} customStyle={`product-grid-item-cart`} btnText={'Add to cart'}/>
-        <span  className={`product-grid-item-price`}>${`${price}`}</span>
     </div>
 };
-const mapStateToProps = state=>{
-    return{
-        cart:state.cart
-    }
-};
 
-export default connect(mapStateToProps,{addToCart})(ProductGridItem);
+
+export default connect(null,{addToCart})(ProductGridItem);

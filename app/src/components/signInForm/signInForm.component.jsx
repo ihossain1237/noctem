@@ -22,9 +22,9 @@ class SignInForm extends React.Component {
             <form onSubmit={this.props.handleSubmit(this.onSubmit)} className={`sign-in-form`}>
                 <Field name="email" component={FormInput} label={`EMAIL`} placeholder={`enter your email`}/>
                 <Field name="password" component={FormInput} label={`PASSWORD`} placholder={`enter your password`}/>
-                <CustomButton btnText={'Log In'}/>
+                <CustomButton>SIGN IN</CustomButton>
 
-                <span>Dont Have an account ? <Link to={'/signup'}>Sign up</Link></span>
+                <span className={`register-text`}>Dont Have an account ? <Link to={'/signup'}>Sign up</Link></span>
             </form>
 
         );
