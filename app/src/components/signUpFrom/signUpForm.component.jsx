@@ -37,7 +37,7 @@ class SignUpForm extends React.Component{
                     <Field name={`password`} type={`password`} label={`PASSWORD`} component={FormInput}/>
                     <Field name={`confirmPassword`} type={`password`} label={`CONFIRM PASSWORD`} component={FormInput}/>
                 </div>
-                <CustomButton type='submit' btnText={`CREATE ACCOUNT`}/>
+                <CustomButton type='submit'>SIGN UP</CustomButton>
             </form>
         );
     }

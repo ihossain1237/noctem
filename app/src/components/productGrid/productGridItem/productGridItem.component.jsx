@@ -19,7 +19,7 @@ const ProductGridItem = ({product,addToCart}) => {
                 <CustomButton onClick={()=>addToCart(product)} customStyle={`productGridItem-info-btn`} btnText={'Add to cart'}>Add To Cart</CustomButton>
             </div>
 
-    </div>
+   </div>
 };
 
 

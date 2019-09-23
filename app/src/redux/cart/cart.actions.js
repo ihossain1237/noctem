@@ -29,7 +29,9 @@ export const unLoadCart = ()=>dispatch=>{
 };
 
 export const clearCart= () => dispatch =>{
-    console.log('clear cart')
+
+    console.log('clear cart');
+
   dispatch({
       type:CLEAR_CART
   })

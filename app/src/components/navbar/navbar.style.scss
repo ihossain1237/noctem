@@ -5,18 +5,19 @@
   z-index:20;
   width: 100%;
   height: auto;
-  background-color: rgba(white,0.7);
+  background-color: rgba(white,0.9);
   transition: all .2s;
-  padding: 1rem;
+  padding: .5rem;
   &-brand{
     color: black;
     font-size: 1rem;
     font-weight: 700;
     align-self: center;
+    margin-left: .5rem;
   }
   &-menu{
     display: flex;
-    width: 55%;
+    width: 65%;
     margin-left: auto;
     justify-content: end;
     align-items: center;
@@ -36,11 +37,11 @@
     width: 100%;
     align-items: center;
     margin: 2rem;
-
+    background: rgba(white,0);
     justify-content: space-between;
     &-item{
       color: black;
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
   }
 
