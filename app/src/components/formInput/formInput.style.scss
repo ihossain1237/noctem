@@ -7,7 +7,7 @@
     font-size: 1rem;
     font-weight: 400;
     margin-bottom: 1rem;
-    align-self: center;
+    margin-left: 1.2rem;
   }
 
   &-input {
@@ -33,8 +33,21 @@
     height: 1rem;
     font-size: 1rem;
     color: red;
-    margin: .5rem;
+    margin: 1rem;
     align-self: center;
 
   }
+}
+
+@media screen and (min-width: 1020px) {
+    .field{
+      &-label{
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+      }
+      &-input{
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+      }
+    }
 }

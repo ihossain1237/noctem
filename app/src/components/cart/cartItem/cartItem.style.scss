@@ -1,3 +1,4 @@
+
 .cart-item{
   height: auto;
   width: 100%;
@@ -15,12 +16,24 @@
     border-radius: 0 0 20px 20px;
     &-name,&-price,&-quantity{
       color: white;
-      font-size:1.2rem;
-      margin:.5rem auto;
+      font-size:1rem;
+      margin:.75rem auto;
+    }
+    &-quantity{
+      *{
+        margin: auto 1rem;
+      }
     }
   }
   &-remove{
     width: 100%;
     border-radius: 0 0 20px 20px;
+  }
+}
+
+@media screen and (min-width: 1020px){
+  .cart-item{
+    height: auto;
+    width: 20%;
   }
 }

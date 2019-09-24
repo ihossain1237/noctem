@@ -31,17 +31,17 @@ class Sidebar extends React.Component{
     };
 
     render() {
-        console.log(this.state.visible);
         return <div className={`sidebar`} style={{transform:!this.state.visible?'translateX(-100%)':'translateX(0%)'}} ref={node=>{this.node=node}}>
             <div className={`sections`}>
                 <SidebarSection/>
             </div>
-            <CustomButton onClick={this.handleClick} customStyle={`sidebar-btn`}>{this.state.visible? <span> &#10094;</span>:<span>&#10095;</span>}</CustomButton>
+            <CustomButton onClick={this.handleClick} customStyle={`sidebar-btn`}>{this.state.visible? <span> &#10094;</span>:<span> &#10095;</span>}</CustomButton>
         </div>
     };
 
 
 }
+
 
 
 

@@ -14,3 +14,13 @@
     width: 80%;
   }
 }
+
+
+@media screen and (min-width: 1020px){
+  .sign-up-form{
+    width: 50%;
+  }
+  &-name, &-email, &-password {
+    width: 40%;
+  }
+}

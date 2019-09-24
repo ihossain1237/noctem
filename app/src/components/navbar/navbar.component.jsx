@@ -5,6 +5,7 @@ import {connect} from "react-redux";
 import {signOut} from "../../redux/signIn/signIn.actions";
 import appData from "../../api/appData";
 import CustomButton from "../custom-button/customButton.component";
+import {Spring} from "react-spring/renderprops-universal";
 
 
 class Navbar extends React.Component {
@@ -37,8 +38,8 @@ class Navbar extends React.Component {
         const signInOrOut = this.props.isSignedIn ?<span onClick={()=>this.props.signOut()}>SIGN OUT</span> :<Link className={`nav-menu-item`} to={'/signIn'}>SIGN IN</Link>;
 
 
-        return (
-            <div className={`nav`} ref={node => { this.node = node; }}>
+
+        return  <div className={`nav`}  ref={node => { this.node = node; }}>
                 <Link className={`nav-brand`} to={`/`}>NOCTEM</Link>
                 <div className={`nav-menu-desktop`}>
                     <Link className={`nav-expand-item`} to={'/products/men/:item'}>MEN</Link>
@@ -52,16 +53,16 @@ class Navbar extends React.Component {
                     <Link className={`nav-menu-item`} to={'/cart'}>CART</Link>
                     <CustomButton customStyle={'nav-toggle'} onClick={this.handleClick}>{this.state.visible? <span className={'nav-toggle-arrow'}> &#10094;</span>:<span className={'nav-toggle-arrow'}>&#10095;</span>}</CustomButton>
                 </div>
-
-                <div className={`nav-expand`} style={{display:this.state.visible?'flex':'none'}}>
+                <div className={`nav-expand`} style={{marginTop:this.state.visible?'0':'-1000%'}}>
                     <Link className={`nav-expand-item`} to={'/products/men/:item'}>MEN</Link>
                     <Link className={`nav-expand-item`} to={'/products/women/:item'}>WOMEN</Link>
                     <Link className={`nav-expand-item`} to={'/products/girls/:item'}>GIRLS</Link>
                     <Link className={`nav-expand-item`} to={'/products/boys/:item'}>BOYS</Link>
                 </div>
-            </div>
-        );
-    }
+            </div>}
+
+
+
 }
 
 const mapStateToProps = state=>{
