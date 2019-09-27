@@ -11,7 +11,7 @@ import {PersistGate} from "redux-persist/integration/react";
 
 
 ReactDOM.render(<Provider store={store}>
-    <BrowserRouter basename={`https://radiant-basin-88677.herokuapp.com/`}>
+    <BrowserRouter>
         <PersistGate persistor={persistor}>
             <App/>
         </PersistGate>
