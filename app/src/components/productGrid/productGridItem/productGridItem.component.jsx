@@ -10,7 +10,7 @@ import {useSpring,animated,config} from "react-spring";
 import Loader from "../../loader/loader.component";
 
 const ProductGridItem = ({product,addToCart}) => {
-    const props = useSpring({config:{duration:1000},opacity:1,from:{opacity:0}});
+    const props = useSpring({config:{duration:100},opacity:1,from:{opacity:0}});
     const {name,image,price}  = product;
     return     <animated.div  className={`container-fluid productGridItem `} style={props}>
                 <div className={`productGridItem-img`}>

@@ -20,12 +20,17 @@ route.post('/',async (req,res)=>{
 
 });
 route.post('/update',async (req,res)=>{
-    console.log(req.body);
-    const {email,items} = req.body;
-    const cart = await Cart.findOne({email});
-    cart.items = items;
-    await cart.save();
-    res.status(200).json({});
+    try{
+        const {email,items} = req.body;
+        const cart = await Cart.findOne({email});
+        cart.items = items;
+        await cart.save();
+        res.status(200).json({});
+    }catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
+
 });
 
 

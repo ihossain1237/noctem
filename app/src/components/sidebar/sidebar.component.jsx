@@ -3,7 +3,7 @@ import React from 'react';
 import './sidebar.style.scss';
 import SidebarSection from "./sidebarSection/sidebarSection.component";
 import CustomButton from "../custom-button/customButton.component";
-
+import onClickOutsideHOC from "react-onclickoutside";
 
 class Sidebar extends React.Component{
 
@@ -93,33 +93,18 @@ class Sidebar extends React.Component{
         ]
 
     };
-    
-    handleClick=()=>{
 
-        if (!this.state.visible){
-            document.addEventListener('click', this.handleOutsideSidebar, false);
-        }else {
-            document.removeEventListener('click', this.handleOutsideSidebar, false);
-        }
-        this.setState(prevState => ({
-            visible: !prevState.visible,
-        }));
-    };
-    handleOutsideSidebar=(e)=> {
-        if (this.node.contains(e.target)) {
-            return;
-        }
-
-        this.handleClick();
+    handleClickOutside = evt => {
+        this.setState({visible:false});
     };
 
     render() {
         console.log(this.state[this.props.category]);
-        return <div className={`sidebar`} style={{transform:!this.state.visible?'translateX(-100%)':'translateX(0%)'}} ref={node=>{this.node=node}}>
+        return <div className={`sidebar`} style={{transform:!this.state.visible?'translateX(-100%)':'translateX(0%)'}} >
             <div className={`sections`}>
                 <SidebarSection itemList={this.state[this.props.category]}/>
             </div>
-            <CustomButton onClick={this.handleClick} customStyle={`sidebar-btn`}>{this.state.visible? <span> &#10094;</span>:<span> &#10095;</span>}</CustomButton>
+            <CustomButton onClick={()=>this.setState({visible:!this.state.visible})} customStyle={`sidebar-btn`}>{this.state.visible? <span> &#10094;</span>:<span> &#10095;</span>}</CustomButton>
         </div>
     };
 
@@ -132,4 +117,4 @@ class Sidebar extends React.Component{
 
 
 
-export default Sidebar;
+export default onClickOutsideHOC(Sidebar);

@@ -14,17 +14,17 @@ router.get('/:category/:type',async (req,res)=>{
    }
 });
 
-router.post('/input',async (req,res)=>{
-   const {name,price,image,category,type} = req.body;
-   const product = new Product({
-       name:name,
-       price:price,
-       image:image,
-       category:category,
-       type:type
-   });
-  await product.save();
-  res.json({msg:'done'});
-});
+// router.post('/input',async (req,res)=>{
+//    const {name,price,image,category,type} = req.body;
+//    const product = new Product({
+//        name:name,
+//        price:price,
+//        image:image,
+//        category:category,
+//        type:type
+//    });
+//   await product.save();
+//   res.json({msg:'done'});
+// });
 
 module.exports = router;
