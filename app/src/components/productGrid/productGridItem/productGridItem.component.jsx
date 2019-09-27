@@ -8,13 +8,15 @@ import {addToCart} from "../../../redux/cart/cart.actions";
 import {connect} from "react-redux";
 import {useSpring,animated,config} from "react-spring";
 import Loader from "../../loader/loader.component";
-
+import LazyLoad from 'react-lazy-load';
 const ProductGridItem = ({product,addToCart}) => {
     const props = useSpring({config:{duration:100},opacity:1,from:{opacity:0}});
     const {name,image,price}  = product;
     return     <animated.div  className={`container-fluid productGridItem `} style={props}>
                 <div className={`productGridItem-img`}>
-                    <Img className={`img-fluid`} loader={Loader}  src={`${image}`} alt=""/>
+                    <LazyLoad offsetVertical={0} height={'100%'} width={'100%'}>
+                        <Img className={`img-fluid`} loader={Loader}  src={`${image}`} alt=""/>
+                    </LazyLoad>
                 </div>
                 <div className={`productGridItem-info`}>
                     <span className={`productGridItem-info-name`}>{name}</span>

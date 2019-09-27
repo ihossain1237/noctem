@@ -6,13 +6,15 @@ import {connect} from "react-redux";
 import {useSpring,animated} from "react-spring";
 import CustomButton from "../../custom-button/customButton.component";
 import Loader from "../../loader/loader.component";
-
+import LazyLoad from 'react-lazy-load';
 const CartItem = ({product,addToCart,removeFromCart,deleteFromCart}) => {
     const props = useSpring({config:{duration:1000},opacity:1,from:{opacity:0}});
     const {name,price,image,itemCount} = product;
     return (
         <animated.div className={`cart-item`} style={props}>
-            <Img src={image} loader={Loader} className={`img-fluid cart-item-img`}/>
+            <LazyLoad offsetVertical={0} offsetHorizontal={0}>
+                <Img src={image}  className={`img-fluid cart-item-img`}/>
+            </LazyLoad>
             <div className={`cart-item-info`}>
                 <span className={`cart-item-info-name`}>{name}</span>
                 <span className={`cart-item-info-price`}>${(price*itemCount).toFixed(2)}</span>
