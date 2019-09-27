@@ -6,22 +6,22 @@ const Homepage = () => {
     return (
         <div className="homepage-container">
             <div className="homepage-item">
-                <Link to={'/products/men/:item'} style={{textDecoration: 'none', color: '#fff'}}>
+                <Link to={'/products/men/jacket'} style={{textDecoration: 'none', color: '#fff'}}>
                     <h1 className={`homepage-item-text`}><span> MEN</span></h1>
                 </Link>
             </div>
             <div className="homepage-item">
-                <Link to={'/women'} style={{textDecoration: 'none', color: '#fff'}}>
+                <Link to={'/women/dress'} style={{textDecoration: 'none', color: '#fff'}}>
                     <h1 className={`homepage-item-text`}><span> WOMEN</span></h1>
                 </Link>
             </div>
             <div className="homepage-item">
-                <Link to={'/boys'} style={{textDecoration: 'none', color: '#fff'}}>
+                <Link to={'/boy/coat'} style={{textDecoration: 'none', color: '#fff'}}>
                     <h1 className={`homepage-item-text`}><span> BOYS</span></h1>
                 </Link>
             </div>
             <div className="homepage-item">
-                <Link to={'/girls'} style={{textDecoration: 'none', color: '#fff'}}>
+                <Link to={'/girl/legging'} style={{textDecoration: 'none', color: '#fff'}}>
                     <h1 className={`homepage-item-text`}><span> GIRLS</span></h1>
                 </Link>
             </div>
