@@ -7,8 +7,8 @@ const
     SidebarSection = ({itemList}) => {
     return <div className={'sidebarSection'}>
         {
-            itemList.map(item=>{
-                return <Link to={item.des} className={`sidebarSection-item`}>{item.title}</Link>
+            itemList.map((item,i)=>{
+                return <Link key={i} to={item.des} className={`sidebarSection-item`}>{item.title}</Link>
             })
         }
     </div>
