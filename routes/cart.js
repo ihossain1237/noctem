@@ -5,7 +5,7 @@ const Products = require('../models/Products');
 const Cart = require('../models/Cart');
 
 route.post('/',async (req,res)=>{
-    console.log(req.body)
+    console.log(req.body);
    const {email} = req.body;
     let cart = await Cart.findOne({email});
     if (!cart){

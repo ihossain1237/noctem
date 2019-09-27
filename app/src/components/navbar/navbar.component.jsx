@@ -3,15 +3,14 @@ import './navbar.style.scss';
 import {Link} from "react-router-dom";
 import {connect} from "react-redux";
 import {signOut} from "../../redux/signIn/signIn.actions";
-import appData from "../../api/appData";
 import CustomButton from "../custom-button/customButton.component";
-import {Spring} from "react-spring/renderprops-universal";
-
+import {ReactComponent as CartIcon} from "../../assets/shopping-bag.svg";
 
 class Navbar extends React.Component {
 
     state={
         visible:false,
+
 
     };
     handleClick=()=>{
@@ -48,9 +47,8 @@ class Navbar extends React.Component {
                     <Link className={`nav-expand-item`} to={'/products/boys/:item'}>BOYS</Link>
                 </div>
                 <div className={`nav-menu`}>
-                    <Link className={`nav-menu-item`} to={'/products/men/:item'}>SEARCH</Link>
                     {signInOrOut}
-                    <Link className={`nav-menu-item`} to={'/cart'}>CART</Link>
+                    <Link className={`nav-menu-item`} to={'/cart'}><CartIcon className={`nav-menu-cartIcon`}/></Link>
                     <CustomButton customStyle={'nav-toggle'} onClick={this.handleClick}>{this.state.visible? <span className={'nav-toggle-arrow'}> &#10094;</span>:<span className={'nav-toggle-arrow'}>&#10095;</span>}</CustomButton>
                 </div>
                 <div className={`nav-expand`} style={{marginTop:this.state.visible?'0':'-1000%'}}>

@@ -2,10 +2,10 @@ import React from "react";
 import './customButton.style.scss';
 
 
-const CustomButton = ({btnText, customStyle,onClick,children}) =>
+const CustomButton = ({customStyle,onClick,children}) =>
 
 
-    <button onClick={onClick} className={`btn btn--black ${customStyle}`}>{children}</button>
+    <button onClick={onClick} className={`btn btn--black ${customStyle}`}>{children}</button>;
 
 
 

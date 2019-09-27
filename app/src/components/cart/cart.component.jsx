@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import './cart.style.scss'
 import CustomButton from "../custom-button/customButton.component";
 import {clearCart} from "../../redux/cart/cart.actions";
+import Loader from "../loader/loader.component";
 
 const Cart = ({cart,clearCart}) => {
     let totalPrice = 0;

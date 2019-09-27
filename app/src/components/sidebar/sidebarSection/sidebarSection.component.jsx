@@ -3,14 +3,14 @@ import React from 'react';
 import './sidebarSection.style.scss';
 import {Link} from "react-router-dom";
 
-const SidebarSection = () => {
+const
+    SidebarSection = ({itemList}) => {
     return <div className={'sidebarSection'}>
-        <Link to={`/products/men/shirts`} className={'sidebarSection-item'}>SHIRTS</Link>
-        <Link to={'/products/men/tShirts'} className={'sidebarSection-item'}>T-SHIRTS</Link>
-        <Link to={'/products/men/polos'} className={'sidebarSection-item'}>POLOS</Link>
-        <span className={'sidebarSection-item'}>SWEATSHIRTS</span>
-        <span className={'sidebarSection-item'}>SUITS</span>
-        <span className={'sidebarSection-item'}>JACKETS</span>
+        {
+            itemList.map(item=>{
+                return <Link to={item.des} className={`sidebarSection-item`}>{item.title}</Link>
+            })
+        }
     </div>
 };
 

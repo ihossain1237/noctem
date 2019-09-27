@@ -25,10 +25,10 @@ class Products extends Component {
 
     render() {
 
-
+        const {category} = this.props.match.params;
         return (
             <div className={`products`}>
-                <Sidebar/>
+                <Sidebar category={category}/>
                 <ProductGrid products={this.props.products}/>
 
             </div>
