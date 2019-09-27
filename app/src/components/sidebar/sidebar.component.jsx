@@ -99,7 +99,6 @@ class Sidebar extends React.Component{
     };
 
     render() {
-        console.log(this.state[this.props.category]);
         return <div className={`sidebar`} style={{transform:!this.state.visible?'translateX(-100%)':'translateX(0%)'}} >
             <div className={`sections`}>
                 <SidebarSection itemList={this.state[this.props.category]}/>
