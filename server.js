@@ -15,7 +15,7 @@ app.use('/api/cart',require('./routes/cart'));
 
 if (process.env.NODE_ENV==='production'){
     app.use(express.static('app/build'));
-    app.get("*",(req,res)=>res.sendFile(path.resolve(__dirname,'app','build','index.html')));
+    app.get("/*",(req,res)=>res.sendFile(path.resolve(__dirname,'app','build','index.html')));
 }
 const PORT = process.env.PORT || 5000;
 
