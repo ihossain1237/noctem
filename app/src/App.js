@@ -7,10 +7,6 @@ import SignInForm from './components/signInForm/signInForm.component';
 import Products from "./pages/Products/Products";
 import SignUpForm from './components/signUpFrom/signUpForm.component'
 import Cart from "./components/cart/cart.component";
-import DataInputForm from "./components/dataInputForm/dataInputForm.component";
-import DataInput from "./components/dataInput/dataInput";
-
-
 
 class App extends Component {
     render() {
@@ -24,7 +20,6 @@ class App extends Component {
                         <Route path={`/signIn`} component={SignInForm}/>
                         <Route path={`/signUp`} component={SignUpForm}/>
                         <Route path={`/cart`} component={Cart}/>
-                        <Route path={`/dev`} exact component={DataInput}/>
                     </Switch>
                 </div>
             </div>
