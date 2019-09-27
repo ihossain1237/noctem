@@ -37,10 +37,10 @@ class Navbar extends React.Component {
                     <CustomButton customStyle={'nav-toggle'} onClick={()=>this.setState({visible:!this.state.visible})}>{this.state.visible? <span className={'nav-toggle-arrow'}> &#10094;</span>:<span className={'nav-toggle-arrow'}>&#10095;</span>}</CustomButton>
                 </div>
                 <div className={`nav-expand`} style={{marginTop:this.state.visible?'0':'-1000%'}}>
-                    Link className={`nav-expand-item`} to={'/products/men/jacket'}>MEN</Link>
-                <Link className={`nav-expand-item`} to={'/products/women/dress'}>WOMEN</Link>
-                <Link className={`nav-expand-item`} to={'/products/girl/legging'}>GIRLS</Link>
-                <Link className={`nav-expand-item`} to={'/products/boy/coat'}>BOYS</Link>
+                    <Link className={`nav-expand-item`} to={'/products/men/jacket'}>MEN</Link>
+                    <Link className={`nav-expand-item`} to={'/products/women/dress'}>WOMEN</Link>
+                    <Link className={`nav-expand-item`} to={'/products/girl/legging'}>GIRLS</Link>
+                    <Link className={`nav-expand-item`} to={'/products/boy/coat'}>BOYS</Link>
                 </div>
             </div>}
 
