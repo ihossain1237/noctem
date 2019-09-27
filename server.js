@@ -6,7 +6,7 @@ const path = require('path');
 connectDB();
 
 app.use(express.json({extended:false}));
-app.use(cors({origin:'http://localhost:3000'}));
+app.use(cors({origin:'*'}));
 
 app.use('/api/products',require('./routes/products'));
 app.use('/api/signUp',require('./routes/user'));
