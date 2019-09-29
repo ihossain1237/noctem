@@ -2,12 +2,12 @@
   position: fixed;
   top: 0;
   margin: auto;
-  z-index:20;
+  z-index:10000;
   width: 100%;
   height: auto;
   background-color: white;
-  transition: all .5s;
-  padding:.75rem .5rem;
+  transition: all 1s;
+  padding: .5rem;
   &-brand{
     color: black;
     font-size: 1rem;
@@ -18,7 +18,7 @@
   }
   &-menu{
     display: flex;
-    width: 41%;
+    width: 50%;
     margin-left: auto;
     justify-content: end;
     align-items: center;
@@ -31,20 +31,40 @@
       color: black;
     }
     &-cartIcon{
-      width: 1rem;
-      height: 1rem;
+      width: 1.8rem;
+      height: 1.85rem;
+      margin: .5rem;
+      animation: smallToBig 1s;
+
+    }
+    &-cartCount{
+      position: absolute;
+      text-align: center;
+      right: 4.1rem;
+      top:1.78rem;
+      width: 1.5rem;
+      padding: .1rem .4rem;
+      font-size: .65rem;
+      font-weight: 700;
+      color: black;
+      border-radius: 1000px;
+      animation: smallToBig 1s;
     }
   }
   &-expand{
 
     display: flex;
     flex-direction: column;
-    height: 15vh;
+    height: 25vh;
     width: 100%;
     align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
     //margin: 2rem;
     background: rgba(white,0);
     justify-content: space-between;
+    transition: all .5s;
+    animation: fade 1s;
     &-item{
       color: black;
       font-size: 1rem;
@@ -81,6 +101,10 @@
         width: 2rem;
         height: 2rem;
       }
+      &-cartCount{
+        right: 2.5rem;
+        top: 2.7rem;
+      }
     }
 
     &-toggle{
@@ -91,3 +115,31 @@
   
 }
 
+@keyframes smallToBig {
+  0%{
+    transform: scale(1.5);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes toggle-leave {
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0.5;
+  }
+  100%{
+    opacity: 0;
+  }
+}

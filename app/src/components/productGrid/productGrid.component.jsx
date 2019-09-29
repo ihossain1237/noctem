@@ -9,7 +9,7 @@ const ProductGrid= ({products}) => {
             {
                 products ?
                     products.map((product, i) => {
-                        return <ProductGridItem key={i} product={product} />
+                        return <ProductGridItem key={product._id} product={product} />
                     }) : null
             }
 

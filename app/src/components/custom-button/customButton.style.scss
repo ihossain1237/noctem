@@ -1,52 +1,61 @@
 .btn{
-  padding:1rem;
-  background:black;
-  color:white;
-  border:none;
-  transition:all .2s;
-  backface-visibility:hidden;
-  margin:auto;
-  box-sizing:border-box;
-  cursor:pointer;
-  border-radius: 0;
-  &:hover{
-    color:black;
-    background:white;
-    //transform:translateY(-3px);
-    box-shadow: 0 4px 5px rgba(black, .3);
-  }
-  &:active{
-    //transform:translateY(0);
-    box-shadow: 0 0 0 rgba(black, .3);
-  }
-  &:visited{
-    color: black;
-    background: white;
-    box-shadow: none;
-  }
+  padding: .75rem;
+  background: black;
+  color: white;
+  box-sizing: border-box;
 }
 
-.btn-text {
-  &:link,
-  &:visited {
-    font-size: 1rem;
-    color: black;
-    display: inline-block;
-    text-decoration: none;
-    border-bottom: 1px solid black;
-    padding: 1px;
-    transition: all .2s;
+@media screen and (min-width: 1020px){
+  .btn{
+    padding:1rem;
+    background:black;
+    color:white;
+    border:none;
+    transition:all .2s;
+    backface-visibility:hidden;
+    margin:auto;
+    box-sizing:border-box;
+    cursor:pointer;
+    border-radius: 0;
+    &:hover{
+      color:black;
+      background:white;
+      //transform:translateY(-3px);
+      box-shadow: 0 4px 5px rgba(black, .3);
+    }
+    &:active{
+      //transform:translateY(0);
+      box-shadow: 0 0 0 rgba(black, .3);
+    }
+    &:visited{
+      color: black;
+      background: white;
+      box-shadow: none;
+    }
   }
 
-  &:hover {
-    background-color: black;
-    color: white;
-    box-shadow: 0 1rem 2rem rgba(black, .15);
-    transform: translateY(-2px);
-  }
+  .btn-text {
+    &:link,
+    &:visited {
+      font-size: 1rem;
+      color: black;
+      display: inline-block;
+      text-decoration: none;
+      border-bottom: 1px solid black;
+      padding: 1px;
+      transition: all .2s;
+    }
 
-  &:active {
-    box-shadow: 0 .5rem 1rem rgba(black, .15);
-    transform: translateY(0);
+    &:hover {
+      background-color: black;
+      color: white;
+      box-shadow: 0 1rem 2rem rgba(black, .15);
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      box-shadow: 0 .5rem 1rem rgba(black, .15);
+      transform: translateY(0);
+    }
   }
 }

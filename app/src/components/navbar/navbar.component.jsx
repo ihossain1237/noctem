@@ -6,23 +6,36 @@ import {signOut} from "../../redux/signIn/signIn.actions";
 import CustomButton from "../custom-button/customButton.component";
 import {ReactComponent as CartIcon} from "../../assets/shopping-bag.svg";
 import onClickOutsideHOC from "react-onclickoutside";
+import {Spring} from "react-spring/renderprops-universal";
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 class Navbar extends React.Component {
 
     state={
         visible:false,
-
+        cartCount:0,
 
     };
     handleClickOutside = evt => {
         this.setState({visible:false});
     };
+    componentDidMount() {
+        const currentCartCount =this.props.cart.items.length>0? this.props.cart.items.map(item=>item.itemCount).reduce((a,c)=>a+c):0;
+        this.setState({cartCount:currentCartCount,cartIconStyle:{animation: 'none'}});
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        const prevCartCount = prevProps.cart.items.length>0? prevProps.cart.items.map(item=>item.itemCount).reduce((a,c)=>a+c):0;
+        const currentCartCount =this.props.cart.items.length>0? this.props.cart.items.map(item=>item.itemCount).reduce((a,c)=>a+c):0;
+        if (prevCartCount!==currentCartCount){
+            this.setState({cartCount:currentCartCount});
+        }
+
+
+    }
+
 
     render() {
-
         const signInOrOut = this.props.isSignedIn ?<span onClick={()=>this.props.signOut()}>SIGN OUT</span> :<Link className={`nav-menu-item`} to={'/signIn'}>SIGN IN</Link>;
-
-
-
         return  <div className={`nav`} >
                 <Link className={`nav-brand`} to={`/`}>NOCTEM</Link>
                 <div className={`nav-menu-desktop`}>
@@ -33,10 +46,17 @@ class Navbar extends React.Component {
                 </div>
                 <div className={`nav-menu`}>
                     {signInOrOut}
-                    <Link className={`nav-menu-item`} to={'/cart'}><CartIcon className={`nav-menu-cartIcon`}/></Link>
+                    <div className={`nav-menu-item`}>
+                        <Link  to={'/cart'}><CartIcon key={this.state.cartCount} className={`nav-menu-cartIcon`} />
+                                <span key={this.state.cartCount+1} className={`nav-menu-cartCount`}>{this.state.cartCount}</span>
+
+                        </Link>
+
+                    </div>
+
                     <CustomButton customStyle={'nav-toggle'} onClick={()=>this.setState({visible:!this.state.visible})}>{this.state.visible? <span className={'nav-toggle-arrow'}> &#10094;</span>:<span className={'nav-toggle-arrow'}>&#10095;</span>}</CustomButton>
                 </div>
-                <div className={`nav-expand`} style={{marginTop:this.state.visible?'0':'-1000%'}}>
+                <div className={`nav-expand`} style={{display:this.state.visible?'flex':'none'}}>
                     <Link className={`nav-expand-item`} to={'/products/men/jacket'}>MEN</Link>
                     <Link className={`nav-expand-item`} to={'/products/women/dress'}>WOMEN</Link>
                     <Link className={`nav-expand-item`} to={'/products/girl/legging'}>GIRLS</Link>
