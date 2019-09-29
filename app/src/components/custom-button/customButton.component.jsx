@@ -5,7 +5,7 @@ import './customButton.style.scss';
 const CustomButton = ({customStyle,onClick,children}) =>
 
 
-    <button onClick={onClick} className={`btn btn--black ${customStyle}`}>{children}</button>;
+    <button onClick={onClick} className={`button button--black ${customStyle}`}>{children}</button>;
 
 
 

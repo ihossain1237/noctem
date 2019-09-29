@@ -1,12 +1,19 @@
-.btn{
+.button{
   padding: .75rem;
   background: black;
   color: white;
-  box-sizing: border-box;
+  border: none;
+  outline: none;
+  &:focus,&:active{
+    outline: none;
+  }
+  &::-moz-focus-inner{
+    border: 0;
+  }
 }
 
 @media screen and (min-width: 1020px){
-  .btn{
+  .button{
     padding:1rem;
     background:black;
     color:white;
@@ -34,28 +41,5 @@
     }
   }
 
-  .btn-text {
-    &:link,
-    &:visited {
-      font-size: 1rem;
-      color: black;
-      display: inline-block;
-      text-decoration: none;
-      border-bottom: 1px solid black;
-      padding: 1px;
-      transition: all .2s;
-    }
 
-    &:hover {
-      background-color: black;
-      color: white;
-      box-shadow: 0 1rem 2rem rgba(black, .15);
-      transform: translateY(-2px);
-    }
-
-    &:active {
-      box-shadow: 0 .5rem 1rem rgba(black, .15);
-      transform: translateY(0);
-    }
-  }
 }

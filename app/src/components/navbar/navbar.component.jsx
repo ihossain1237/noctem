@@ -1,13 +1,11 @@
 import React from 'react';
 import './navbar.style.scss';
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import {connect} from "react-redux";
 import {signOut} from "../../redux/signIn/signIn.actions";
 import CustomButton from "../custom-button/customButton.component";
 import {ReactComponent as CartIcon} from "../../assets/shopping-bag.svg";
 import onClickOutsideHOC from "react-onclickoutside";
-import {Spring} from "react-spring/renderprops-universal";
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 class Navbar extends React.Component {
 
     state={
@@ -35,14 +33,17 @@ class Navbar extends React.Component {
 
 
     render() {
-        const signInOrOut = this.props.isSignedIn ?<span onClick={()=>this.props.signOut()}>SIGN OUT</span> :<Link className={`nav-menu-item`} to={'/signIn'}>SIGN IN</Link>;
+        const signInOrOut = this.props.isSignedIn ?
+            <span onClick={()=>this.props.signOut()}>SIGN OUT</span>
+
+            :<Link className={`nav-expand-item nav-link`} to={'/signIn'}>SIGN IN</Link>;
         return  <div className={`nav`} >
                 <Link className={`nav-brand`} to={`/`}>NOCTEM</Link>
                 <div className={`nav-menu-desktop`}>
-                    <Link className={`nav-expand-item`} to={'/products/men/jacket'}>MEN</Link>
-                    <Link className={`nav-expand-item`} to={'/products/women/dress'}>WOMEN</Link>
-                    <Link className={`nav-expand-item`} to={'/products/girl/legging'}>GIRLS</Link>
-                    <Link className={`nav-expand-item`} to={'/products/boy/coat'}>BOYS</Link>
+                    <NavLink className={`nav-expand-item nav-link`} activeClassName={`nav-link-active`} to={'/products/men/jacket'}>MEN</NavLink>
+                    <NavLink className={`nav-expand-item nav-link`} activeClassName={`nav-link-active`} to={'/products/women/dress'}>WOMEN</NavLink>
+                    <NavLink className={`nav-expand-item nav-link`} activeClassName={`nav-link-active`} to={'/products/boy/coat'}>BOYS</NavLink>
+                    <NavLink className={`nav-expand-item nav-link`} activeClassName={`nav-link-active`} to={'/products/girl/legging'}>GIRLS</NavLink>
                 </div>
                 <div className={`nav-menu`}>
                     {signInOrOut}
@@ -57,10 +58,10 @@ class Navbar extends React.Component {
                     <CustomButton customStyle={'nav-toggle'} onClick={()=>this.setState({visible:!this.state.visible})}>{this.state.visible? <span className={'nav-toggle-arrow'}> &#10094;</span>:<span className={'nav-toggle-arrow'}>&#10095;</span>}</CustomButton>
                 </div>
                 <div className={`nav-expand`} style={{display:this.state.visible?'flex':'none'}}>
-                    <Link className={`nav-expand-item`} to={'/products/men/jacket'}>MEN</Link>
-                    <Link className={`nav-expand-item`} to={'/products/women/dress'}>WOMEN</Link>
-                    <Link className={`nav-expand-item`} to={'/products/girl/legging'}>GIRLS</Link>
-                    <Link className={`nav-expand-item`} to={'/products/boy/coat'}>BOYS</Link>
+                    <NavLink className={`nav-expand-item nav-link`} activeClassName={`nav-link-active`} to={'/products/men/jacket'}>MEN</NavLink>
+                    <NavLink className={`nav-expand-item nav-link`} activeClassName={`nav-link-active`} to={'/products/women/dress'}>WOMEN</NavLink>
+                    <NavLink className={`nav-expand-item nav-link`} activeClassName={`nav-link-active`} to={'/products/boy/coat'}>BOYS</NavLink>
+                    <NavLink className={`nav-expand-item nav-link`} activeClassName={`nav-link-active`} to={'/products/girl/legging'}>GIRLS</NavLink>
                 </div>
             </div>}
 
