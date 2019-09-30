@@ -7,6 +7,10 @@ import Img from 'react-image';
 import {addToCart} from "../../../redux/cart/cart.actions";
 import {connect} from "react-redux";
 import Loader from "../../loader/loader.component";
+import toast from 'toasted-notes'
+import 'toasted-notes/src/styles.css';
+
+
 const ProductGridItem = ({product,addToCart}) => {
 
     const {name,image,price}  = product;
@@ -20,7 +24,13 @@ const ProductGridItem = ({product,addToCart}) => {
                 <div key={image} className={`productGridItem-info`}>
                     <span className={`productGridItem-info-name`}>{name}</span>
                     <span  className={`productGridItem-info-price`}>${`${price}`}</span>
-                    <CustomButton onClick={()=>addToCart(product)} customStyle={`productGridItem-info-btn`} btnText={'Add to cart'}>Add To Cart</CustomButton>
+                    <CustomButton onClick={()=>{
+                        addToCart(product);
+                        toast.notify('Item Added',{
+                            duration:1000,
+                            position:"bottom"
+                        });
+                    }} customStyle={`productGridItem-info-btn`} btnText={'Add to cart'}>Add To Cart</CustomButton>
                 </div>
             </div>
 
