@@ -8,6 +8,7 @@ import Loader from "../loader/loader.component";
 import TopButton from "../topButton/topButton.component";
 
 const Cart = ({cart,clearCart}) => {
+
     let totalPrice = 0;
     if (cart.items.length>0)
         totalPrice = cart.items.map(item=>item.itemCount*item.price).reduce((a,c)=>a+c);

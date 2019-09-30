@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Router,Route, Switch} from 'react-router-dom';
-import './App.css';
+import './App.scss';
 import Homepage from "./pages/homepage/homepage";
 import Navbar from "./components/navbar/navbar.component";
 import SignInForm from './components/signInForm/signInForm.component';
@@ -9,10 +9,11 @@ import SignUpForm from './components/signUpFrom/signUpForm.component'
 import Cart from "./components/cart/cart.component";
 import history from "./history";
 
+    history.listen((location,action)=>{
+        window.scrollTo(0,0);
+    });
+
     const App =()=> {
-        history.listen((location,action)=>{
-           console.log(location.pathname)
-        });
         return (
             <div>
                 <Router history={history}>

@@ -4,7 +4,7 @@ import './sidebar.style.scss';
 import SidebarSection from "./sidebarSection/sidebarSection.component";
 import CustomButton from "../custom-button/customButton.component";
 import onClickOutsideHOC from "react-onclickoutside";
-
+import history from "../../history";
 class Sidebar extends React.Component{
 
     state={
@@ -94,9 +94,17 @@ class Sidebar extends React.Component{
 
     };
 
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        history.listen((location,action)=>{
+            this.setState({visible:false})
+        });
+    }
+
     handleClickOutside = evt => {
         this.setState({visible:false});
     };
+
+
 
     render() {
         return <div className={`sidebar`} style={{transform:!this.state.visible?'translateX(-100%)':'translateX(0%)'}} >

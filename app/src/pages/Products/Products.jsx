@@ -4,12 +4,10 @@ import ProductGrid from "../../components/productGrid/productGrid.component";
 import Sidebar from "../../components/sidebar/sidebar.component";
 import './Products.scss'
 import {connect} from "react-redux";
-import CustomButton from "../../components/custom-button/customButton.component";
 import TopButton from "../../components/topButton/topButton.component";
+import {Spring} from "react-spring/renderprops-universal";
 
 class Products extends Component {
-
-
     componentDidMount() {
 
         const {category, type} = this.props.match.params;
@@ -29,12 +27,13 @@ class Products extends Component {
 
         const {category} = this.props.match.params;
         return (
-            <div className={`products`}>
+            <Spring from={{background:'red'}} to={{background:'white'}}>
+                {props=> <div style={props} className={`products`}>
                 <Sidebar category={category}/>
                 <ProductGrid products={this.props.products}/>
                 <TopButton/>
-
-            </div>
+            </div>}
+            </Spring>
         );
     }
 }
