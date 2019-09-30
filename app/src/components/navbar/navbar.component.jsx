@@ -55,7 +55,10 @@ class Navbar extends React.Component {
 
                     </div>
 
-                    <CustomButton customStyle={'nav-toggle'} onClick={()=>this.setState({visible:!this.state.visible})}>{this.state.visible? <span className={'nav-toggle-arrow'}> &#10094;</span>:<span className={'nav-toggle-arrow'}>&#10095;</span>}</CustomButton>
+                    <CustomButton customStyle={'nav-toggle'} onClick={()=>this.setState({visible:!this.state.visible})}>
+                        {this.state.visible? <span className={'nav-toggle-arrow'}> &#10094;</span>
+                            :<span className={'nav-toggle-arrow'}>&#10095;</span>}
+                    </CustomButton>
                 </div>
                 <div className={`nav-expand`} style={{display:this.state.visible?'flex':'none'}}>
                     <NavLink className={`nav-expand-item nav-link`} activeClassName={`nav-link-active`} to={'/products/men/jacket'}>MEN</NavLink>

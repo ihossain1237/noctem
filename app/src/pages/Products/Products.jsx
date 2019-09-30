@@ -4,6 +4,8 @@ import ProductGrid from "../../components/productGrid/productGrid.component";
 import Sidebar from "../../components/sidebar/sidebar.component";
 import './Products.scss'
 import {connect} from "react-redux";
+import CustomButton from "../../components/custom-button/customButton.component";
+import TopButton from "../../components/topButton/topButton.component";
 
 class Products extends Component {
 
@@ -30,6 +32,7 @@ class Products extends Component {
             <div className={`products`}>
                 <Sidebar category={category}/>
                 <ProductGrid products={this.props.products}/>
+                <TopButton/>
 
             </div>
         );

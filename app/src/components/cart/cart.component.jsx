@@ -5,6 +5,7 @@ import './cart.style.scss'
 import CustomButton from "../custom-button/customButton.component";
 import {clearCart} from "../../redux/cart/cart.actions";
 import Loader from "../loader/loader.component";
+import TopButton from "../topButton/topButton.component";
 
 const Cart = ({cart,clearCart}) => {
     let totalPrice = 0;
@@ -29,6 +30,7 @@ const Cart = ({cart,clearCart}) => {
                     return <CartItem key={item.id} product={item}/>
                 })}
             </div>
+            <TopButton/>
             </div>
     );
 };

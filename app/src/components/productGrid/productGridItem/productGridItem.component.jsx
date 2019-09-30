@@ -17,9 +17,9 @@ const ProductGridItem = ({product,addToCart}) => {
 
             <div  className={`container-fluid productGridItem `} >
                 <div   className={`productGridItem-img`}>
-                    <Img  className={`img-fluid`}  src={[`${image}`]} loader={Loader} alt=""/>
+                    <Img key={image}  className={`img-fluid`}  src={[`${image}`]} loader={Loader} alt=""/>
                 </div>
-                <div className={`productGridItem-info`}>
+                <div key={image} className={`productGridItem-info`}>
                     <span className={`productGridItem-info-name`}>{name}</span>
                     <span  className={`productGridItem-info-price`}>${`${price}`}</span>
                     <CustomButton onClick={()=>addToCart(product)} customStyle={`productGridItem-info-btn`} btnText={'Add to cart'}>Add To Cart</CustomButton>
