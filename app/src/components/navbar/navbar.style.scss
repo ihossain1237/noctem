@@ -5,7 +5,7 @@
   z-index:10000;
   width: 100%;
   height: auto;
-  background-color: white;
+  background-color: rgba(white,0.85);
   transition: all 1s;
   padding: .5rem;
 
@@ -87,21 +87,21 @@
       border-radius: 1000px;
       animation: smallToBig 1s;
     }
+
   }
   &-expand{
 
     display: flex;
     flex-direction: column;
-    height: 25vh;
+    height: 30vh;
     width: 100%;
     align-items: center;
     padding-top: 2rem;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
     //margin: 2rem;
     background: rgba(white,0);
     justify-content: space-between;
     transition: all .5s ease-in-out;
-    animation: fade 2s;
     &-item{
       color: black;
       font-size: .92rem;
@@ -112,6 +112,12 @@
   &-toggle{
     transform: rotate(90deg) scale(.6);
     transition: none;
+  }
+  &-visible{
+    transform: translateY(-100px);
+  }
+  &-hidden{
+    transform: translateY(0);
   }
 
 }
