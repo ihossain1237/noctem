@@ -102,6 +102,7 @@
     background: rgba(white,0);
     justify-content: space-between;
     transition: all .5s ease-in-out;
+    animation: fade 1s;
     &-item{
       color: black;
       font-size: .92rem;

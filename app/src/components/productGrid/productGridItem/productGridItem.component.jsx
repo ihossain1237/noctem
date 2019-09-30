@@ -6,9 +6,7 @@ import CustomButton from "../../custom-button/customButton.component";
 import Img from 'react-image';
 import {addToCart} from "../../../redux/cart/cart.actions";
 import {connect} from "react-redux";
-import {useSpring,animated} from "react-spring";
 import Loader from "../../loader/loader.component";
-import LazyLoad from 'react-lazy-load';
 const ProductGridItem = ({product,addToCart}) => {
 
     const {name,image,price}  = product;
